@@ -15,7 +15,7 @@ function Header() {
               <a href="#">Chef</a>
             </li>
             <li>
-              <a href="#">Views</a>
+              <a href="/">Views</a>
             </li>
             <li>
               <a href="#">Carrier</a>
