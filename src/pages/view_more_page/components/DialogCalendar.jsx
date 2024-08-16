@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DialogCalendar = ({ isOpen, onClose, title, children }) => {
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(new Date());
     if (!isOpen) return null;
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -16,14 +16,15 @@ const DialogCalendar = ({ isOpen, onClose, title, children }) => {
         <h2>{title}</h2>
         <div className="dialog-content">{children}</div>
         <DatePicker
-        className="date_picker"
+        
+          className="date_picker"
           selected={selectedDate}
           onChange={handleDateChange}
           inline
         />
         {selectedDate && (
           <div>
-            <p>Date: {selectedDate.toDateString()}</p>
+            <p>{selectedDate.toDateString()}</p>
           </div>
         )}
         <button className="button_next_reservation" onClick={onClose}>NEXT</button>

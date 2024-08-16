@@ -59,7 +59,15 @@ body {
 
 .mySwiper {
     display: flex;
-
+   
+}
+.mySwiper_view {
+  display: flex;
+  max-width: 700px;
+  max-height: 600px;
+}
+.swiper-pagination{
+  display: none;
 }
 
 .img_swiper {
@@ -132,9 +140,12 @@ body {
     font-style: normal;
     color: white;
 }
-
+.container_image_view{
+  max-width: 900px;
+  height: 500px;
+}
 .image_view{
-    max-width: 900px;
+   width: 100%;
 }
 
 .container_btn_ic{
@@ -201,14 +212,11 @@ body {
     cursor: pointer;
   }
   
+
   .dialog button:hover {
     opacity: 0.7;
   }
-  
-  .date_picker{
-    background-color: antiquewhite;
 
-  }
   .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name{
     width: 100px;
     height: 50px;
@@ -223,3 +231,43 @@ body {
     margin-top: 20px;
     width: 200px;
   }
+.dialog_view_image{
+  object-fit: fill;
+  width: 800px;
+  height: 600px;
+}
+
+.container_content_dialog_view{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-height: 600px;
+}
+
+.ic_transition_arr_swiper{
+  height: 50px;
+  width: 50px;
+  color: black  ;
+}
+
+.button_transition_swiper:hover{
+  background-color: #eeecec;
+  border-radius: 40px;
+}
+
+.draf_container{
+  height: 80px;
+  width: 80px;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 700px) {
+  .container_image_view{
+    min-width: 600px;
+  }
+  .description_content_view{
+    width: 500px;
+  }
+}
