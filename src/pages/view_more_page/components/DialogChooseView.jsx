@@ -34,8 +34,6 @@ const DialogChooseView = ({ isOpen, onClose, title }) => {
             <img 
             className="ic_transition_arr_swiper" alt="icons" src={ic_arr_left_transition_swiper}/>
           </button>}
-         
-            
           <Swiper
             pagination={true}
             modules={[Pagination, Autoplay]}

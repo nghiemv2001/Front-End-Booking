@@ -3,6 +3,8 @@ import imgView from "../../../assets/images/img_view1.jpg";
 import icArrRight from "../../../assets/icons/ic_arrow_right.svg";
 import DialogCalendar from './DialogCalendar';
 import DialogChooseView from "./DialogChooseView";
+import DialogFillInformation from "./DiaLogFillInformation";
+import swal from "sweetalert";
 function ContentDescriptionView() {
   const text = `The Ocean Breeze Table is perfectly positioned by a large window, offering stunning panoramic views of the vast sparkling blue sea. The gentle sea breezes flow through, enhancing the tranquil and serene ambiance of your dining experience. As you enjoy your meal, you will be captivated by the endless horizon and the rhythmic sound of the waves. This ideal location provides a sense of calm and relaxation, allowing you to fully immerse yourself in the beauty of the ocean while savoring each bite. Whether for a romantic dinner or a peaceful meal with friends, the Ocean Breeze Table offers a truly memorable experience.`;
 
@@ -10,6 +12,7 @@ function ContentDescriptionView() {
   const [index, setIndex] = useState(0); // chỉ số thứ tự của chữ
   const [isOpenDialog, setIsOpenDialog] = useState(false);
   const [isOpenDialogViews, setIsOpenDialogViews] = useState(false);
+  const [isOpenDialogFill, setIsOpenDialogFill] = useState(false);
 
   const OpenDialogCalendar = () => {
     setIsOpenDialog(true);
@@ -22,6 +25,12 @@ function ContentDescriptionView() {
    
   const CloseDialogViews = () =>{
     setIsOpenDialogViews(false);
+    setIsOpenDialogFill(true);
+  }
+
+  const CloseDialogFill = () =>{
+    setIsOpenDialogFill(false);
+    swal("Good job!","Thank you for your interest in our service. We will respond to you as quickly as possible via email.", "success");
   }
 
   useEffect(() => {
@@ -45,7 +54,6 @@ function ContentDescriptionView() {
       <div className="container_image_view">
         <img className="image_view" alt="image view" src={imgView} />
       </div>
-      
       <div className="container_btn_ic">
         <button className="button_booking_view_more" onClick={OpenDialogCalendar}>
           Book Now
@@ -58,8 +66,14 @@ function ContentDescriptionView() {
       <DialogChooseView
         isOpen={isOpenDialogViews}
         onClose={CloseDialogViews}
-        title={"CHOOSE VIEWS"}
+        title={"Choose View"}
       ></DialogChooseView>
+      <DialogFillInformation
+      isOpen={isOpenDialogFill}
+      isClose={CloseDialogFill}
+      title={"Provide Your Details"}
+      >
+      </DialogFillInformation>
     </div>
   );
 }

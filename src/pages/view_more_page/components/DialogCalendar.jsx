@@ -16,7 +16,7 @@ const DialogCalendar = ({ isOpen, onClose, title, children }) => {
         <h2>{title}</h2>
         <div className="dialog-content">{children}</div>
         <DatePicker
-        
+        minDate={new Date()} 
           className="date_picker"
           selected={selectedDate}
           onChange={handleDateChange}
